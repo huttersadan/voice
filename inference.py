@@ -307,8 +307,10 @@ datafiles = []
 for i in os.listdir(TESS):
     datafiles.append(TESS + i)
 ed = emotion_detector('Models/SER.hdf5', "Models/Gender_Classifier.hdf5")
-file = random.choice(datafiles)
-print(file)
+#file = random.choice(datafiles)
+type_wav = 'happy'
+file = "Data/changed_wav/"+'changed_{}.wav'.format(type_wav)
+#print(file)
 emotion_pred_list,emotion_pred,gender_pred = ed.start(file=file)
 EMOTIONS = {
             0: 'Angry',
